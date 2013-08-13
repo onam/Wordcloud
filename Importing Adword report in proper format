@@ -1,0 +1,22 @@
+library(data.table)
+data <- read.csv("C:\\Users\\Rob\\Desktop\\Onam\\Onam's work\\R Practice work\\Adreport.csv")
+data <- data.table(data)# changing into data table
+str(data)
+names(data)
+#Changing names of the columns
+setnames(data,"Description.line.1","DL1" )
+setnames(data,"Description.line.2","DL2" )
+setnames(data,"Display.URL","DisplayUrl" )
+setnames(data,"Ad.state","AdState" )
+setnames(data,"Avg..position","AvgPosition" )
+setnames(data,"Cost...conv...1.per.click.","CostperConv" )
+setnames(data,"Conv..rate..1.per.click.","ConvRate" )
+setnames(data,"Ad.ID","AdId" )
+setnames(data,"Ad.group","Adgroup" )
+setnames(data,"Conv...1.per.click.","Conv/Click" )
+#Changing the Month from Factore to Date and Fctore to character
+#data$Month <- as.Date(data$Month, "%m/%d/%y")
+data$AdState <- as.character(data$AdState)
+data$DL1 <- as.character(data$DL1)
+data$DL2 <- as.character(data$DL2)
+data$Ad <- as.character(data$Ad)
